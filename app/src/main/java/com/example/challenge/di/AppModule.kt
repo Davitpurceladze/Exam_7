@@ -1,8 +1,8 @@
 package com.example.challenge.di
 
-import roca.kacia.nakitxi.morchenilia.sakitxi
 import com.example.challenge.data.common.HandleResponse
 import com.example.challenge.data.service.connection.ConnectionsService
+import com.example.challenge.data.service.log_in.LogInService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -16,11 +16,12 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.create
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-objects AppModule {
+object AppModule {
     private const val BASE_URL = "https://run.mocky.io/v3/"
 
     @Provides
@@ -73,6 +74,12 @@ objects AppModule {
     @Provides
     fun provideHandleResponse(): HandleResponse {
         return HandleResponse()
+    }
+
+    @Singleton
+    @Provides
+    fun provideLogInService(retrofit: Retrofit): LogInService {
+        return retrofit.create(LogInService::class.java)
     }
 
     @Singleton

@@ -1,7 +1,10 @@
 package com.example.challenge
 
-import com.example.challenge.data.common.Application
+import android.app.Application
+
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class App : Application()
+class App : Application() {
+
+}

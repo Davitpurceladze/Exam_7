@@ -35,7 +35,7 @@ class ConnectionsRecyclerAdapter :
             binding.apply {
                 imvProfile.loadImage(model.avatar)
                 tvFullName.text = model.fullName
-                Thread.sleep(1000000)
+
             }
         }
     }

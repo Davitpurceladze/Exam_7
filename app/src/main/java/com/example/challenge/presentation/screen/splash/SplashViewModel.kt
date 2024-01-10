@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SplashViewModel constructor(private val getTokenUseCase: GetTokenUseCase) :
+class SplashViewModel @Inject constructor(private val getTokenUseCase: GetTokenUseCase) :
     ViewModel() {
 
     private val _uiEvent = MutableSharedFlow<SplashUiEvent>()

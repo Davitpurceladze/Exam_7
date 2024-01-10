@@ -35,6 +35,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
     private fun handleNavigationEvents(event: SplashViewModel.SplashUiEvent) {
         when (event) {
             is SplashViewModel.SplashUiEvent.NavigateToConnections -> findNavController().navigate(
+
                 SplashFragmentDirections.actionSplashFragmentToFriendsFragment()
             )
 
